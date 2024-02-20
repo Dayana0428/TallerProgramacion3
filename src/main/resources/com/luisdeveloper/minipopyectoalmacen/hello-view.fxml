@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="575.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.luisdeveloper.minipopyectoalmacen.AlmacenController">
+   <children>
+      <TabPane layoutX="15.0" layoutY="14.0" prefHeight="518.0" prefWidth="780.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="ClienteTab" text="Cliente">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="-9.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="786.0">
+                           <children>
+                              <Label fx:id="NombreLabel" layoutX="41.0" layoutY="53.0" text="Nombre:" />
+                              <Label fx:id="ApellidosLabel" layoutX="39.0" layoutY="96.0" text="Apellidos:" />
+                              <Separator layoutX="8.0" layoutY="23.0" prefHeight="15.0" prefWidth="774.0" />
+                              <Label fx:id="IdentificacionLabel" layoutX="19.0" layoutY="143.0" text="Identificacion" />
+                              <Label fx:id="DireccionLabel" layoutX="39.0" layoutY="189.0" text="Direccion:" />
+                              <Label fx:id="TelefonoLabel" layoutX="40.0" layoutY="234.0" text="Telefono:" />
+                              <TableView fx:id="ClienteTableView" layoutX="14.0" layoutY="297.0" prefHeight="154.0" prefWidth="635.0">
+                                <columns>
+                                  <TableColumn fx:id="NombreTableColumn" prefWidth="97.60000991821289" text="Nombre" />
+                                    <TableColumn fx:id="ApellidoTableColumn" prefWidth="155.19996643066406" text="Apellido" />
+                                    <TableColumn fx:id="IdentificacionTableColumn" prefWidth="119.20001220703125" text="Identificacion" />
+                                    <TableColumn fx:id="emailTableColumn" prefWidth="132.79998779296875" text="Email" />
+                                    <TableColumn fx:id="fechaNacimientoTableColumn" prefWidth="129.5999755859375" text="Fecha de nacimiento" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="AgregarClienteButton" layoutX="29.0" layoutY="462.0" mnemonicParsing="false" onAction="#agregarClienteAccion" text="Agregar" />
+                              <Button fx:id="EliminarClienteButton" layoutX="110.0" layoutY="462.0" mnemonicParsing="false" onAction="#eliminarClienteAccion" text="Eliminar" />
+                              <Button fx:id="ActualizarClienteButton" layoutX="186.0" layoutY="462.0" mnemonicParsing="false" onAction="#atualizarClienteAccion" text="Actualizar" />
+                              <Button fx:id="LimpiarClienteButton" layoutX="276.0" layoutY="462.0" mnemonicParsing="false" onAction="#limpiarClienteAccion" text="Limpiar" />
+                              <TextField fx:id="NombreTextField" layoutX="96.0" layoutY="49.0" />
+                              <TextField fx:id="TelefonoTextField" layoutX="96.0" layoutY="230.0" />
+                              <TextField fx:id="ApellidosTextField" layoutX="96.0" layoutY="92.0" />
+                              <TextField fx:id="IdentificacionTextField" layoutX="96.0" layoutY="139.0" />
+                              <TextField fx:id="DireccionTextField" layoutX="96.0" layoutY="185.0" />
+                              <Separator layoutX="9.0" layoutY="275.0" prefHeight="15.0" prefWidth="634.0" />
+                              <Label fx:id="TipoClienteLabel" layoutX="401.0" layoutY="53.0" text="Tipo de cliente:" />
+                              <ChoiceBox fx:id="TipoClienteChoiceBox" layoutX="486.0" layoutY="49.0" prefWidth="150.0" />
+                              <Label fx:id="EmailLabel" layoutX="407.0" layoutY="96.0" text="Email:" />
+                              <Label fx:id="FechaNacimientoLabel" layoutX="332.0" layoutY="143.0" text="Fecha de nacimiento:" />
+                              <Label fx:id="NITLabel" layoutX="412.0" layoutY="189.0" text="NIT:" />
+                              <Separator layoutX="321.0" layoutY="43.0" orientation="VERTICAL" prefHeight="236.0" prefWidth="22.0" />
+                              <TextField fx:id="emailTextField" layoutX="448.0" layoutY="92.0" />
+                              <TextField fx:id="FechaNacimientoTextField" layoutX="448.0" layoutY="139.0" />
+                              <TextField fx:id="NITTextField" layoutX="448.0" layoutY="185.0" />
+                              <Button fx:id="BucarClienteButton" layoutX="661.0" layoutY="257.0" mnemonicParsing="false" onAction="#buscarClienteAccion" prefHeight="50.0" prefWidth="91.0" text="Buscar" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Producto">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="TableViewProducto" layoutX="24.0" layoutY="300.0" prefHeight="154.0" prefWidth="635.0">
+                           <columns>
+                              <TableColumn fx:id="CodigoTableColumn" prefWidth="97.60000991821289" text="Codigo" />
+                              <TableColumn fx:id="NombreProductoTableColumn" prefWidth="155.19996643066406" text="Nombre" />
+                              <TableColumn fx:id="DescripcionTableColumn" prefWidth="119.20001220703125" text="Descripcion" />
+                              <TableColumn fx:id="ValorUnitarioTableColumn" prefWidth="132.79998779296875" text="Valor Unitario" />
+                              <TableColumn fx:id="CnatidadExistenciasTableColumn" prefWidth="129.5999755859375" text="Cantidad Existencias" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="CnatidadExistenciasTexField" layoutX="106.0" layoutY="231.0" />
+                        <Label fx:id="TipoProductoLabel" layoutX="399.0" layoutY="54.0" text="Tipo de producto:" />
+                        <ChoiceBox fx:id="TipoProductoChoiceBox" layoutX="495.0" layoutY="50.0" prefWidth="150.0" />
+                        <Separator layoutX="19.0" layoutY="285.0" prefHeight="15.0" prefWidth="634.0" />
+                        <Label fx:id="CodigoLabel" layoutX="44.0" layoutY="54.0" text="Codigo:" />
+                        <Label fx:id="NombreProductoLabel" layoutX="41.0" layoutY="97.0" text="Nombre:" />
+                        <Label fx:id="DescripcionLabel" layoutX="33.0" layoutY="140.0" text="Descripcion:" />
+                        <Label fx:id="ValorUnitarioLabel" layoutX="27.0" layoutY="190.0" text="Valor Unitario:" />
+                        <Label fx:id="CantidadExistenciasLabel" layoutY="235.0" text="Cantidad Existencias:" />
+                        <TextField fx:id="CodigoTexField" layoutX="105.0" layoutY="50.0" />
+                        <TextField fx:id="NombreProductoTexField" layoutX="105.0" layoutY="93.0" />
+                        <TextField fx:id="DescriptionTexField" layoutX="105.0" layoutY="140.0" />
+                        <TextField fx:id="ValorUnitarioTexField" layoutX="106.0" layoutY="186.0" />
+                        <Separator layoutX="331.0" layoutY="53.0" orientation="VERTICAL" prefHeight="236.0" prefWidth="22.0" />
+                        <Label fx:id="FechaVencimientoLabel" layoutX="347.0" layoutY="97.0" text="Fecha de Vencimento:" />
+                        <Label fx:id="CodigoAprobacionLabel" layoutX="352.0" layoutY="140.0" text="Codigo Aprobacion:" />
+                        <Label fx:id="TemperaturaRefrigeracionLabel" layoutX="340.0" layoutY="188.0" text="Temperatura refrigeracion:" />
+                        <TextField fx:id="FechaVencimientoTexField" layoutX="471.0" layoutY="93.0" />
+                        <TextField fx:id="CodigoAprobacionTexField" layoutX="471.0" layoutY="136.0" />
+                        <TextField fx:id="TemperaturaRefrigeracionTexField" layoutX="495.0" layoutY="185.0" prefHeight="26.0" prefWidth="125.0" />
+                        <Button fx:id="BuscarProductoButton" layoutX="671.0" layoutY="267.0" mnemonicParsing="false" onAction="#buscarProductoAccion" prefHeight="50.0" prefWidth="91.0" text="Buscar" />
+                        <Button fx:id="AgregarProductoButton" layoutX="35.0" layoutY="463.0" mnemonicParsing="false" onAction="#agregarProductoAccion" text="Agregar" />
+                        <Button fx:id="EliminarProductoButton" layoutX="122.0" layoutY="463.0" mnemonicParsing="false" onAction="#eliminarProductoAccion" text="Eliminar" />
+                        <Button fx:id="AcualizarProductoButton" layoutX="188.0" layoutY="463.0" mnemonicParsing="false" onAction="#actualizarProductoAccion" text="Actualizar" />
+                        <Button fx:id="LimpiarProductoButton" layoutX="286.0" layoutY="463.0" mnemonicParsing="false" onAction="#limpiarProductoAccion" text="Limpiar" />
+                        <Label fx:id="PesoEnvaseLabel" layoutX="366.0" layoutY="235.0" text="Peso del Envase:" />
+                        <Label fx:id="PaisOrigenLabel" layoutX="554.0" layoutY="162.0" text="Pais de Origen:" />
+                        <TextField fx:id="PaisOrigenTexField" layoutX="634.0" layoutY="158.0" prefHeight="26.0" prefWidth="134.0" />
+                        <TextField fx:id="PesoEnvaseTexField" layoutX="469.0" layoutY="230.0" prefHeight="26.0" prefWidth="153.0" />
+                        <Separator layoutX="3.0" layoutY="25.0" prefHeight="15.0" prefWidth="774.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
